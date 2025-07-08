@@ -1,3 +1,21 @@
+/// Project Asset Dumper
+///
+/// This binary recursively scans a directory for Rust source files (`.rs`), parses each file,
+/// collects their ASTs and parse errors, and encodes all files into a single binary asset file.
+///
+/// # Usage
+///
+///     cargo run --bin project_dump -- <path-to-directory> [--out <output-path>]
+///
+/// - `<path-to-directory>`: The root directory to scan for Rust files.
+/// - `--out <output-path>`: (Optional) Path to write the output asset file. Defaults to `project.asset`.
+///
+/// # Example
+///
+///     cargo run --bin project_dump -- ./my_rust_project --out my_project.asset
+///
+/// This will create `my_project.asset` containing all `.rs` files in `./my_rust_project` and subdirectories.
+
 use std::{env, fs, process::exit, path::Path, io::BufWriter};
 use walkdir::WalkDir;
 use rust_analyzer::asset::Project;
