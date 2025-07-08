@@ -19,6 +19,10 @@ doctest = false
 name = "rust-analyzer"
 path = "src/bin/main.rs"
 
+[[bin]]
+name = "project_dump"
+path = "src/bin/project_dump.rs"
+
 [dependencies]
 anyhow.workspace = true
 base64 = "0.22"

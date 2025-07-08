@@ -33,6 +33,8 @@ mod target_spec;
 mod task_pool;
 mod test_runner;
 mod version;
+pub mod asset;
+pub mod asset_gen;
 
 mod handlers {
     pub(crate) mod dispatch;
